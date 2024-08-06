@@ -5,7 +5,7 @@ export const environment = {
     // The firebase config you retrieved from the console.
     // Note that this is NOT sensitive information
     firebaseConfig: {
-        apiKey: "XXXXXXXXXXXXXXXXXXXX",
+        apiKey: "XXXXXXXXXXXXXXXXXXXXx",
         authDomain: "XXXXXXXXXXXXXXXXXXXX",
         projectId: "XXXXXXXXXXXXXXXXXXXX",
         storageBucket: "XXXXXXXXXXXXXXXXXXXX",
