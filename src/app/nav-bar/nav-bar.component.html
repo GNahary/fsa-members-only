@@ -1,6 +1,11 @@
 <nav>
     <a routerLink="/">
-        <h1 class="app-heading">Members Only App</h1>
+        <h1 class="app-heading">Members-Only App</h1>
     </a>
-    <button (click)="onClickSignOut()">Log Out</button>
+
+    @if(auth.user | async; as user){
+    <button class="sign-out-button" (click)="onClickSignOut()">Sign Out</button>
+    <p class="logged-in-as space-before">Logged in as {{ user.email }}</p>
+    }
+
 </nav>

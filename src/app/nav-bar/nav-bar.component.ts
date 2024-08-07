@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,14 +10,12 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class NavBarComponent {
 
-  errorMessage: string = '';
+  constructor(public auth: AngularFireAuth, private router: Router) {
+  }
 
-  constructor(private auth: AngularFireAuth) { }
-
-  onClickSignOut() {
-    this.errorMessage = "";
+  onClickSignOut(): void {
     this.auth.signOut()
-      .catch(e => { this.errorMessage = e.message; });
+      .then(() => this.router.navigateByUrl('/sign-in'));
   }
 
 }
