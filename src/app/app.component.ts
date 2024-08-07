@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +7,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AppComponent {
   title = 'members-only-no-standalone';
-  errorMessage: string = '';
-
-  constructor(private auth: AngularFireAuth) { }
 
 
-  onClickSignOut() {
-    this.errorMessage = "";
-    this.auth.signOut()
-      .catch(e => { this.errorMessage = e.message; });
-  }
+
 }

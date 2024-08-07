@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 @Component({
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+
+  errorMessage: string = '';
+
+  constructor(private auth: AngularFireAuth) { }
+
+  onClickSignOut() {
+    this.errorMessage = "";
+    this.auth.signOut()
+      .catch(e => { this.errorMessage = e.message; });
+  }
 
 }
 
